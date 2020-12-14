@@ -33,18 +33,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MasGlobal.AR.Employees.EntityModel\MasGlobal.AR.Employees.EntityModel.csproj" />
-    <ProjectReference Include="..\MasGlobal.AR.Employees.BusinessLayer\MasGlobal.AR.Employees.BusinessLayer.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Views\Becas\Bitacora.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\SolicitudesCongresos\Bitacora.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\SolicitudesCursos\Bitacora.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
   </ItemGroup>
 </Project>

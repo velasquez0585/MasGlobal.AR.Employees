@@ -31,15 +31,6 @@ namespace Employees.Controllers
         public class ControllerBase : Controller
         {
 
-            protected static FileResult FileDownload(string file, string type)
-            {
-                byte[] fileBytes = System.IO.File.ReadAllBytes(file);
-                var response = new FileContentResult(fileBytes, type);
-                string fileName = Path.GetFileName(file);
-                response.FileDownloadName = fileName;
-                return response;
-            }
-
         }
 
         public HomeController(UserWrapper userWrapper, IHostingEnvironment env, IConfiguration Configuration, IHttpContextAccessor httpContextAccessor, IMemoryCache cache)
@@ -79,7 +70,7 @@ namespace Employees.Controllers
 
         }
 
-        [Authorize(Roles = "AccesoModulo")]
+       
         public IActionResult Index()
         {
             return View("Index");

@@ -255,7 +255,7 @@ tr, td{
     }
 }
 
-#recaptchaBaliardaDiv {
+#recaptchaMasGlobalDiv {
     margin-left: 45px;
 }
 
@@ -263,7 +263,7 @@ tr, td{
     .td_imagen_producto {
         display: none;
     }
-    #recaptchaBaliardaDiv {
+    #recaptchaMasGlobalDiv {
         margin-left: 0px;
     }
 }

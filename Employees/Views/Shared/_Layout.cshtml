@@ -22,74 +22,7 @@
 
 </head>
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top p-1" id="mainNav">
 
-        <div class="navbar-brand">
-            <a href="~/" style="">
-                @*<img src="~/images/logomobile.png" class="img-responsive imgLogoMobile" style="padding-top:1%;padding-left:1%;">
-                    <img src="~/images/logo_profesionales.png" class="img-responsive imgLogoPc pl-5 pt-2" style="z-index:1000;">*@
-            </a>
-        </div>
-
-        <button class="navbar-toggler float-md-right float-right ml-2 mt-2" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav pl-2  metismenu" id="sdbar-menu" style="overflow-y:hidden">
-
-                    <li class="nav-item sdbar-group-header" data-toggle="tooltip" data-placement="right" title="Base de Datos">
-                        <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseParametros" data-parent="#generalAccordion">
-                            <i class="fa fa-fw fa-cogs"></i>
-                            <span class="nav-link-text">Configuración</span>
-                        </a>
-                        <ul class="sidenav-second-level collapse" id="collapseParametros">
-                            <li>
-                                <a href="@Url.Action("Index", "Employees")" class="pt-2 pb-2" id="sdbar-Employees"><span class="nav-link-text ">Employees</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" data-toggle="tooltip" data-placement="right"><br /><br /><br /><br /></li>
-                </ul>
-            <ul class="navbar-nav sidenav-toggler pl-2">
-                <li class="nav-item">
-                    <a class="nav-link text-center" id="sidenavToggler">
-                        <i class="fa fa-fw fa-angle-left"></i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="tituloWKF navbar-nav mt-4 d-none d-sm-none d-md-none d-lg-block"><li class="nav-item"><h5 class="navbar-text p-0">Administración - Employees</h5></li></ul>
-            <ul class="navbar-nav ml-auto pl-2">
-                @if (User.Identity.IsAuthenticated)
-                {
-
-                    <li class="nav-item dropdown no-arrow mx-1" id="SeccionAlertas">
-
-
-                    </li>
-                    <li class="nav-item">
-                        <span class="navbar-text"><i class="fa fa-fw fa-user-circle-o text-light" title="@UserWrapper.GetUser()"></i></span>
-                        <span class="navbar-text">&nbsp;@UserWrapper.GetUser()</span>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-4">
-                            &nbsp;
-                        </a>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item">
-                        <span class="navbar-text mr-4"><a>Ingresar</a></span>
-                    </li>
-                }
-
-
-            </ul>
-        </div>
-
-    </nav>
     <div class="content-wrapper">
 
         <div class="container-fluid">
@@ -99,7 +32,7 @@
             <div class="container">
                 <div class="text-center">
 
-                    <small>Copyright © 2018 - Baliarda S.A. @UserWrapper.GetBuildVersion()</small>
+                    
                 </div>
             </div>
         </footer>

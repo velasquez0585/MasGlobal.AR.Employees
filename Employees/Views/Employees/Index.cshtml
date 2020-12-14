@@ -1,0 +1,172 @@
+﻿@model IEnumerable<MasGlobal.AR.Employees.EntityModel.Models.EmployeesDto>
+
+@{
+    ViewData["Title"] = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    #modal-cargarPlanillas {
+        width: 60% !important;
+        margin: 5% auto !important;
+    }
+
+    .modal-content {
+        width: 90% !important;
+        margin: 2% auto !important;
+    }
+
+    .table-responsive {
+        overflow: inherit;
+    }
+
+    .header {
+        background-color: #348ab7 !important;
+        color: white !important;
+    }
+</style>
+
+<h2>List Employees</h2>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div id="loading-spinner-container2">
+
+        </div>
+        <div>
+            <div class=" pull-right ml-auto mr-5">
+                Filtrar:
+                <input type="text" id="TextoBuscar">
+                <button id="Buscar" type="button" class="btn btn-sm btn-default mb-2" title="buscar">
+                    <span class=""><i class="fa fa-search" aria-hidden="true"></i></span>
+                </button>
+                <button id="Limpiar" type="button" class="btn btn-sm btn-default mb-2" title="limpiar búsqueda">
+                    <span><i class="fa fa-eraser" aria-hidden="true"></i></span>
+                </button>
+            </div>
+        </div>
+
+        <table id="SList" class="table-responsive-sm table-striped table-bordered table-sm" style="width: 100%">
+            <thead>
+                <tr class="header">
+                    <th>
+                        @Html.DisplayNameFor(model => model.id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.contractTypeName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.roleName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.hourlySalary)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.monthlySalary)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.contractTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.roleName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hourlySalary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.monthlySalary)
+                    </td>
+
+                </tr>
+
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            var oTable;
+
+            loadTable();
+        });
+        function loadTable() {
+            var grdConfig = {
+                columns: [
+                    { data: 'id' },
+                    { data: 'name' },
+                    { data: 'contractTypeName' },
+                    { data: 'roleName' },
+                    { data: 'hourlySalary' },
+                    { data: 'monthlySalary' },
+                ],
+                columnDefs: [
+                    { "width": "10%", "targets": [0] },
+                    { "width": "18%", "targets": [1,2,3,4,5] },
+                    { "className": "dt-head-center dt-body-left", "targets": [0, 1] },
+                    { "order": [[0, 'asc'], [1, 'asc']] },
+                    { "responsivePriority": 1, "targets": [0, 1, 2, 3] },
+                    { "responsivePriority": 2, "targets": [4,5] }
+
+                ],
+                responsive: {
+                    details: {
+                        display: $.fn.dataTable.Responsive.display.modal({
+                            header: function (row) {
+                                var data = row.data();
+                                return 'Detalles de ' + data["name"];
+                            }
+                        })
+
+                    }
+                },
+                dom: "<'pull-right mr-4 mt-1'l>t" + "<'row'<'col-md-5 col-sm-5 col-5'i><'pull-right ml-auto mr-5'p>>"
+            }
+
+            $.extend(dTablesOptions, grdConfig);
+
+            oTable = $('#SList').DataTable(dTablesOptions);
+        }
+
+        $('#Buscar').on('click', function () {
+            $('#loading-spinner-container2').html('<div id="loading-spinner2"><i class="fa fa-spinner fa-spin fa-5x"></i></div>');
+            //sessionStorage.setItem(nombreBusquedaCache, $('#TextoBuscar').val());
+            oTable.search($('#TextoBuscar').val()).draw();
+            $('#loading-spinner-container2').html('');
+        });
+
+        $('#Limpiar').on('click', function () {
+            $('#loading-spinner-container2').html('<div id="loading-spinner2"><i class="fa fa-spinner fa-spin fa-5x"></i></div>');
+
+            $('#TextoBuscar').val("");
+            //sessionStorage.setItem(nombreBusquedaCache, "");
+            oTable.search($('#TextoBuscar').val()).draw();
+            $('#loading-spinner-container2').html('');
+        });
+
+        $("input").keydown(function (e) {
+            if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {
+                $('#Buscar').focus().click();
+                return false;
+            }
+        });
+    </script>
+}
