@@ -87,7 +87,7 @@ namespace Employees
                 // Set a short timeout for easy testing.
                 options.IdleTimeout = TimeSpan.FromMinutes(600);
                 options.Cookie.HttpOnly = true;
-                options.Cookie.Name = "EmployeesBO";
+                options.Cookie.Name = "Employees";
                 options.Cookie.IsEssential = true;
             });
 

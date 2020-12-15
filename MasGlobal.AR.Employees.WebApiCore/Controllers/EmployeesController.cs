@@ -28,7 +28,7 @@ namespace MasGlobal.AR.Employees.WebApiCore.Controllers
             {
                 EmployeesBusinessLogic _employeesBusinessLogic = new EmployeesBusinessLogic(_configuration);
 
-                return await _employeesBusinessLogic.GetEmployeesForId(1);
+                return await _employeesBusinessLogic.GetAllEmployees();
             }
             catch (Exception ex)
             {

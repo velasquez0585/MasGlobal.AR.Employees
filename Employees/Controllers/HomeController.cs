@@ -44,7 +44,7 @@ namespace Employees.Controllers
 
         [AllowAnonymous]
         public async Task<IActionResult> Login()
-        {
+        {            
 
             bool simularAutenticacion = Convert.ToBoolean(_configuration["Login:SimularAutenticacion"]);
 
@@ -73,7 +73,8 @@ namespace Employees.Controllers
        
         public IActionResult Index()
         {
-            return View("Index");
+            return RedirectToAction("Index", "Employees");//por ahora sin login
+            //return View("Index");
         }
         
 

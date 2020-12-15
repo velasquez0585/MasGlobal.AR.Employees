@@ -1,16 +1,16 @@
 ﻿(function ($) {
     "use strict"; // Start of use strict
 
-    setActiveSidebarItem(sideBarActiveItem);
+    //setActiveSidebarItem(sideBarActiveItem);
     $.ajaxSetup({ cache: false });
 
 
-    function setActiveSidebarItem(item) {
-        $('#sdbar-' + item).addClass('active bg-info');
+    //function setActiveSidebarItem(item) {
+    //    $('#sdbar-' + item).addClass('active bg-info');
 
-        $('#sdbar-' + item).parents('.sidenav-second-level').addClass('active show');
-        $('#sdbar-' + item).parents('.sdbar-group-header').addClass('active');
-    }
+    //    $('#sdbar-' + item).parents('.sidenav-second-level').addClass('active show');
+    //    $('#sdbar-' + item).parents('.sdbar-group-header').addClass('active');
+    //}
 
     // Configure tooltips for collapsed side navigation
     $('.navbar-sidenav [data-toggle="tooltip"]').tooltip({

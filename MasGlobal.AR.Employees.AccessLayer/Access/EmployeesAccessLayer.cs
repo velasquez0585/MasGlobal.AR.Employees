@@ -17,25 +17,48 @@ namespace MasGlobal.AR.Employees.AccessLayer.Access
             _configuration = conf;
         }
 
-        public async Task<List<EmployeesDto>> GetAllEmployees()
+        public async Task<List<EmployeesOrigin>> GetAllEmployeesApiExternal()
         {
 
-            string urlApiExterna = _configuration["valores:ApiExternal"];
-            List<EmployeesDto> _listEmployeesDto = new List<EmployeesDto>();
-            var response = new HttpResponseMessage();
-            string stringResult = "";
+            string _urlApiExterna = _configuration["valores:ApiExternal"];
+            List<EmployeesOrigin> _listEmployeesOrigin = new List<EmployeesOrigin>();
+            var _response = new HttpResponseMessage();
+            string _stringResult = "";
             using (var client = new HttpClient())
             {
 
-                response = await client.GetAsync(urlApiExterna);
-                response.EnsureSuccessStatusCode();
-                string responseBody = await response.Content.ReadAsStringAsync();
-                stringResult = await response.Content.ReadAsStringAsync();
-                _listEmployeesDto = JsonConvert.DeserializeObject<List<EmployeesDto>>(stringResult);
+                _response = await client.GetAsync(_urlApiExterna);
+                _response.EnsureSuccessStatusCode();
+                string _responseBody = await _response.Content.ReadAsStringAsync();
+                _stringResult = await _response.Content.ReadAsStringAsync();
+                _listEmployeesOrigin = JsonConvert.DeserializeObject<List<EmployeesOrigin>>(_stringResult);
 
             }
 
-            return  _listEmployeesDto;
+            return _listEmployeesOrigin;
+        }
+
+        public async Task<List<EmployeesDto>> GetAllEmployees()
+        {
+            List<EmployeesOrigin> _listEmployeesOrigin = await GetAllEmployeesApiExternal();
+
+            List<EmployeesDto> _listEmployeesDto = new List<EmployeesDto>(); ;
+
+            //can be done with mapper.map
+            _listEmployeesDto = _listEmployeesOrigin
+            .Select(x => new EmployeesDto()
+            {
+                id  = x.id,
+                name = x.name,
+                contractTypeName = x.contractTypeName,
+                roleId = x.roleId,
+                roleName = x.roleName,
+                roleDescription = x.roleDescription,
+                hourlySalary = x.hourlySalary,
+                monthlySalary = x.monthlySalary,                         
+            }).ToList();
+
+            return _listEmployeesDto;
         }
 
         public async Task<List<EmployeesDto>> GetEmployeesForId(int? id)

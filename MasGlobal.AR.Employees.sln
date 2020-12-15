@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Employees", "Employees\Empl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasGlobal.AR.Employees.AccessLayer", "MasGlobal.AR.Employees.AccessLayer\MasGlobal.AR.Employees.AccessLayer.csproj", "{3AD79584-4223-4567-BFF8-2E04018864FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasGlobal.AR.Employees.BusinessLogic.Test", "MasGlobal.AR.Employees.BusinessLogic.Test\MasGlobal.AR.Employees.BusinessLogic.Test.csproj", "{49BE86A8-9713-46A2-B627-FA92FB0C08D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,12 @@ Global
 		{3AD79584-4223-4567-BFF8-2E04018864FE}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
 		{3AD79584-4223-4567-BFF8-2E04018864FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AD79584-4223-4567-BFF8-2E04018864FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.DebugLocal|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.DebugLocal|Any CPU.Build.0 = Debug|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BE86A8-9713-46A2-B627-FA92FB0C08D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
