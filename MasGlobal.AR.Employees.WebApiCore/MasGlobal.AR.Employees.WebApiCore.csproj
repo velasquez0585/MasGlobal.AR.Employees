@@ -29,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MasGlobal.AR.Employees.BusinessLayer\MasGlobal.AR.Employees.BusinessLayer.csproj" />
+    <ProjectReference Include="..\MasGlobal.AR.Employees.BusinessLogic\MasGlobal.AR.Employees.BusinessLogic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -7,15 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Administración Workflow Congresos</a>
-        </div>
-        <div class="navbar-collapse collapse">            
-            <ul class="nav navbar-nav">
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Congresos" ? "active" : "")">@Html.ActionLink("Congresos", "Index", "Congresos")</li>
-                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Solicitudes" ? "active" : "")">@Html.ActionLink("Solicitudes", "Index", "SolicitudesCongresos")</li>
-
-            </ul>
-            <p class="nav navbar-text navbar-right">Hola, @User.Identity.Name!</p>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Employees</a>
         </div>
     </div>
 </nav>

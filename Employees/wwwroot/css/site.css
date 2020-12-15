@@ -643,8 +643,7 @@ input[type="date"] {
 }
 
     @media (min-width: 992px) {
-        #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {                       
-            background-image: url('../images/imagenbaliardarrhh2.jpg');
+        #mainNav.navbar-dark .navbar-collapse .navbar-sidenav {                                   
             border-right-color:silver;
             border-right-style:solid;
             border-right-width:1px;
@@ -661,8 +660,7 @@ input[type="date"] {
 
             #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level,
             #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-third-level {
-                /*background: #004631 !important;*/
-                background-image: url('../images/imagenbaliardarrhh2.jpg');
+                background: #004631 !important;                
              
             }
     }
@@ -883,10 +881,9 @@ input[type="date"] {
     }
 
 .bg-dark {
-    background-image: url('../images/imagenbaliardarrhh1.jpg') !important;
-    /*border-bottom-color: silver;
+    border-bottom-color: silver;
     border-bottom-style: solid;
-    border-bottom-width: 1px;*/
+    border-bottom-width: 1px;
 }
 
     .card-header {

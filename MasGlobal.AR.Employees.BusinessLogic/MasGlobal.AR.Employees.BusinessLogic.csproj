@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MasGlobal.AR.Employees.AccessLayer\MasGlobal.AR.Employees.AccessLayer.csproj" />
     <ProjectReference Include="..\MasGlobal.AR.Employees.EntityModel\MasGlobal.AR.Employees.EntityModel.csproj" />
   </ItemGroup>
 
